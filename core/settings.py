@@ -90,7 +90,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,"build")],
+        'DIRS': [os.path.join(BASE_DIR, "build")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,15 +126,26 @@ else:
 
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
-CORS_ORIGIN_WHITELIST = {
-    'http://localhost:3000/',
-    'http://127.0.0.1:7000/'    
-}
 
-CORS_TRUSTED_ORIGIN = {
-    'http://localhost:3000/',
-    'http://127.0.0.1:7000/'    
-}
+if DEBUG :
+    
+    CORS_ORIGIN_WHITELIST = [
+        'http://localhost:3000',
+        'http://localhost:7000',   
+    ]
+
+    CSRF_TRUSTED_ORIGIN = [
+        'http://localhost:3000',
+        'http://localhost:7000',    
+    ]
+else:
+     CORS_ORIGIN_WHITELIST = [
+         
+    ]
+     
+     CSRF_TRUSTED_ORIGIN = [
+           
+    ]
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -171,10 +182,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR,"static")
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,"media")
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'build/static')
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
