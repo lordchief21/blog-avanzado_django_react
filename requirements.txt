@@ -64,17 +64,3 @@ wcwidth==0.2.5
 whitenoise==6.2.0
 wrapt==1.14.1
 zope.interface==5.4.0
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
