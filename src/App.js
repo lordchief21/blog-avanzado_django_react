@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Hello Django World !!
+          Hello Django World +.+ !!
         </p>
         <a
           className="App-link"

@@ -22,3 +22,10 @@ class Post(models.Model):
     video =         models.FileField(upload_to=blog_directory_path, blank=True, null =True)
     description =   models.TextField()
     excerpt =       models.CharField(max_length=100)
+    
+    # Código a partir del 11-FEB#
+    
+        #category = models.ForeignKey(BlogCategory, on_delete) 
+     
+    
+    
