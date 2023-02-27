@@ -1,5 +1,7 @@
+from django.utils import timezone
 from django.db import models
 from uuid import uuid4
+from apps.category.models import Category
 
 # Create your models here.
 
@@ -7,8 +9,9 @@ def blog_directory_path(instance, filename):
     return 'blog/{0}/{1}'.format(instance.title, filename)
 
 class Post(models.Model):
-    def queryset(Self):
-        return super().get_queryset().filter(status = 'published')
+    class PostObjects(models.Manager):
+        def queryset(self):
+            return super().get_queryset().filter(status = 'published')
     
     options = {
         ('draft','Draft'),
@@ -23,9 +26,37 @@ class Post(models.Model):
     description =   models.TextField()
     excerpt =       models.CharField(max_length=100)
     
-    # Código a partir del 11-FEB#
+    # Código sin documentar#
     
-        #category = models.ForeignKey(BlogCategory, on_delete) 
+    category = models.ForeignKey(Category, on_delete= models.PROTECT)
+    published= models.DateTimeField(default=timezone.now())
+
+    
+    status = models.CharField(max_length=10, choices=options, default = 'draft')
+    
+    objects = models.Manager()
+    postobjects = PostObjects()
+    
+    class Meta:
+        ordering = ('-published',)
+    
+    def __str__(self) -> str:
+        return self.title
+    
+    def get_video(self):
+        if self.video:
+            return self.video.url
+        else:
+            return ''
+    
+    def get_Thumbail(self):
+        if self.thumbail:
+            return self.thumbail.url
+        else:
+            return ''
+        
+    
+    
      
     
     
