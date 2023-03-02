@@ -21,7 +21,7 @@ class Post(models.Model):
     blog_uuid =     models.UUIDField(default = uuid4, unique=True)
     title =         models.CharField(max_length=255)
     slug =          models.SlugField(unique=True)
-    thumbail =      models.ImageField(upload_to=blog_directory_path)
+    thumbail =      models.ImageField(upload_to=blog_directory_path,max_length=104)
     video =         models.FileField(upload_to=blog_directory_path, blank=True, null =True)
     description =   models.TextField()
     excerpt =       models.CharField(max_length=100)
@@ -38,7 +38,7 @@ class Post(models.Model):
     postobjects = PostObjects()
     
     class Meta:
-        ordering = ('-published',)
+        ordering = ('published',)
     
     def __str__(self) -> str:
         return self.title
