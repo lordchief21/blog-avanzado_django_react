@@ -5,9 +5,9 @@ import { connect } from "react-redux";
 const FullWidthLayout = ({children}) => {
     return(
         <>
-            <Footer/>
-            {children}
             <NavBar/>
+            {children}
+            <Footer/>
         </>
     )
 }
