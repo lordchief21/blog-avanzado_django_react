@@ -1,0 +1,19 @@
+.downloadCv {
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 20px;
+}
+
+.talk {
+    border: 1px solid white;
+    padding: 10px 20px;
+}
+
+.talk:hover {
+    background-color: white;
+    color: black;
+}

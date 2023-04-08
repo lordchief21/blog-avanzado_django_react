@@ -11,12 +11,15 @@ export const AboutMe = () => {
            <h5>Hello, my name is</h5>
            <h1>Cesar A. Villanueva O.</h1>
            <h5>Full Stack Developer</h5>
+           
            <Cta />
 
-           <div className='me'>
-                <img src={ME} alt="" />
+           <div >
+                <img src={ME} alt="" className='me' />
            </div>
+           
            <a href="#contact" className='scroll_down'>Scroll Down</a>
+           
            <HeaderSocial />
         </div>
         
