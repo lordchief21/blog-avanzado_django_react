@@ -29,7 +29,7 @@ export default function Example() {
             About me
           </a>
 
-          <a href="#" className="text-sm font-semibold leading-6">
+          <a href="#Projects" className="text-sm font-semibold leading-6">
             Projects
           </a>
           <a href="#" className="text-sm font-semibold leading-6">

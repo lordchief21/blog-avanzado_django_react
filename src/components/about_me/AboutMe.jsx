@@ -15,7 +15,7 @@ export const AboutMe = () => {
            <Cta />
 
            <div >
-                <img src={ME} alt="" className='me' />
+                <img src={ME} alt="César Villanueva" className='me' />
            </div>
            
            <a href="#contact" className='scroll_down'>Scroll Down</a>
